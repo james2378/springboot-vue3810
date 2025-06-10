@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LvyoufanganDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LvyoufanganEntity" id="lvyoufanganMap">
+        <result property="fanganbianhao" column="fanganbianhao"/>
+        <result property="fanganmingcheng" column="fanganmingcheng"/>
+        <result property="zhaopian" column="zhaopian"/>
+        <result property="chufachengshi" column="chufachengshi"/>
+        <result property="lvyouluxian" column="lvyouluxian"/>
+        <result property="yudingxuzhi" column="yudingxuzhi"/>
+        <result property="xingchengtianshu" column="xingchengtianshu"/>
+        <result property="xiangqingjianjie" column="xiangqingjianjie"/>
+        <result property="jiage" column="jiage"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LvyoufanganVO" >
+		SELECT * FROM lvyoufangan  lvyoufangan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LvyoufanganVO" >
+		SELECT  lvyoufangan.* FROM lvyoufangan  lvyoufangan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LvyoufanganView" >
+
+		SELECT  lvyoufangan.* FROM lvyoufangan  lvyoufangan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LvyoufanganView" >
+		SELECT * FROM lvyoufangan  lvyoufangan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
